@@ -1,5 +1,5 @@
 const { DbBenchmarkBase } = require("./DbBenchmarkBase");
-const { Sequelize, DataTypes, Op } = require("sequelize");
+const { Sequelize, DataTypes } = require("sequelize");
 const DATA_TYPES = require("../../common/dataTypes");
 
 const dbDatatypesMap = {
@@ -80,7 +80,7 @@ class Postgresql extends DbBenchmarkBase {
     return this.db[modelName].findAll({ where: { [fieldName]: values } });
   }
 
-  async createIndex(modelName, fieldName) {
+  createIndex(modelName, fieldName) {
     return this.sequelize.query(
       ` CREATE INDEX idx_${modelName}_${fieldName} ON ${modelName}(${fieldName}) ; `
     );

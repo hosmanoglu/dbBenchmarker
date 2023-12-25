@@ -31,24 +31,17 @@ resultObj.getRandomRecords = getRandomRecordsResutls.results;
 const findManyByIdsResutls = await findManyByIds(getRandomRecordsResutls.data);
 resultObj.findManyByIds = findManyByIdsResutls.results;
 
-const findManyByEmailsResutls = await findManyByEmails(
-  getRandomRecordsResutls.data
-);
+const findManyByEmailsResutls = await findManyByEmails(getRandomRecordsResutls.data);
 resultObj.findManyByEmails = findManyByEmailsResutls.results;
 
 const createIndexResutls = await createIndex();
 resultObj.createIndex = createIndexResutls.results;
 
-const findOneByEmailsAfterIndexResutls = await findOneByEmailsAfterIndex(
-  getRandomRecordsResutls.data
-);
+const findOneByEmailsAfterIndexResutls = await findOneByEmailsAfterIndex(getRandomRecordsResutls.data);
 resultObj.findOneByEmailsAfterIndex = findOneByEmailsAfterIndexResutls.results;
 
-const findManyByEmailsAfterIndexResutls = await findManyByEmailsAfterIndex(
-  getRandomRecordsResutls.data
-);
-resultObj.findManyByEmailsAfterIndex =
-  findManyByEmailsAfterIndexResutls.results;
+const findManyByEmailsAfterIndexResutls = await findManyByEmailsAfterIndex(getRandomRecordsResutls.data);
+resultObj.findManyByEmailsAfterIndex = findManyByEmailsAfterIndexResutls.results;
 
 console.log("done");
 
@@ -57,5 +50,6 @@ for (const [key, value] of Object.entries(resultObj)) {
   for (const iterator of value) {
     console.log(`${key}->  ${iterator.name}: ${iterator.time}     `);
   }
+  console.log("-----***----");
 }
 console.log("done");

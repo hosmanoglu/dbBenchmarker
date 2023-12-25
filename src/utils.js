@@ -33,9 +33,10 @@ function printResults(results) {
 }
 
 const getRandomItems = (arr, count) => {
-  const shuffled = arr.sort(() => 0.5 - Math.random()); // Diziyi karıştırır
-  return shuffled.slice(0, count); // Belirtilen sayıda rastgele öğe seçer
+  const shuffled = arr.sort(() => 0.5 - Math.random()); 
+  return shuffled.slice(0, count); 
 };
+
 module.exports = {
   getDbs,
   measureTime,

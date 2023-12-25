@@ -1,4 +1,7 @@
 class DbBenchmarkBase {
+
+  name = "base";
+
   async init() {}
 
   async insertOne(modelName, modelObject) {}
